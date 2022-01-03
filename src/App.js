@@ -18,6 +18,10 @@ import VerifyEmail from "./Pages/Auth/VerifyEmail";
 import ResendVerificationEmail from "./Pages/Auth/ResendVerificationEmail";
 import BuyerOrders from "./Pages/Buyer/Orders";
 import BuyerSettings from "./Pages/Buyer/Settings";
+import Products from "./Pages/Admin/Product/Index";
+import AdminOrders from "./Pages/Admin/Orders";
+import CreateProduct from "./Pages/Admin/Product/Create";
+import EditProduct from "./Pages/Admin/Product/Edit";
 
 
 function App() {
@@ -66,8 +70,11 @@ function App() {
 
 
                 <Route exact path="/admin/dashboard" element={<AdminDashboard />} />
-                <Route exact path="/admin/products" element={<AdminDashboard />} />
-                <Route exact path="/admin/orders" element={<AdminDashboard />} />
+                <Route exact path="/admin/products" element={<Products />} />
+                <Route exact path="/admin/products/create" element={<CreateProduct />} />
+                <Route exact path="/admin/products/edit/:slug" element={<EditProduct />} />
+                <Route exact path="/admin/orders" element={<AdminOrders />} />
+                
                 <Route path="*" element={<NotFound/>} />
               </Routes>
           </Router>

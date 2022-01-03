@@ -9,7 +9,7 @@ function BuyerSidebar(props) {
 
     return (
         <aside className="md:h-screen w-full sm:w-1/3 md:w-1/5  bg-gray-800">
-            <div className="sticky top-0 w-full">
+            <div className="w-full">
               <ul className="flex flex-col overflow-hidden">
                 <div className="px-8">
                   <div className="h-16 w-full flex items-center">
