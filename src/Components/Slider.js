@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
+import { Link } from "react-router-dom";
 
 export default () => {
   return (
@@ -19,47 +20,46 @@ export default () => {
       >
         <SwiperSlide>
           <div className="max-w-6xl mx-auto px-4">
-            <h1 className="text-indigo-600 text-xl">
+            <h1 className="text-indigo-600 text-xl md:text-3xl font-bold">
                 Sale 20% Off
             </h1>
-            <h1 className="text-gray-800 text-xl">
+            <h1 className="text-gray-800 text-xl md:text-3xl font-bold">
                 On Everything
             </h1>
-            <p className="hidden">
+            <p className="hidden md:block py-5 max-w-lg">
               Explicabo esse amet tempora quibusdam laudantium, laborum eaque
               magnam fugiat hic? Esse dicta aliquid error repudiandae earum
               suscipit fugiat molestias, veniam, vel architecto veritatis
               delectus repellat modi impedit sequi.
             </p>
             <div className="mt-2">
-              <a href="" className="inline-block px-3 py-1 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+              <Link to="/products" className="inline-block px-3 py-1 md:px-10 md: py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
                 Shop Now
-              </a>
+              </Link>
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className="max-w-6xl mx-auto px-4">
-            <h1>
-              <span>Sale 30% Off</span>
-              <br />
-              On Everything
+            <h1 className="text-indigo-600 text-xl md:text-3xl font-bold">
+                Sale 10% Off
             </h1>
-            <p className="hidden">
+            <h1 className="text-gray-800 text-xl md:text-3xl font-bold">
+                On Everything
+            </h1>
+            <p className="hidden md:block py-5 max-w-lg">
               Explicabo esse amet tempora quibusdam laudantium, laborum eaque
               magnam fugiat hic? Esse dicta aliquid error repudiandae earum
               suscipit fugiat molestias, veniam, vel architecto veritatis
               delectus repellat modi impedit sequi.
             </p>
-            <div className="btn-box">
-              <a href="" className="inline-block px-3 py-1 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+            <div className="mt-2">
+              <Link to="/products" className="inline-block px-3 py-1 md:px-10 md: py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
                 Shop Now
-              </a>
+              </Link>
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
       </Swiper>
       </div>
     </section>

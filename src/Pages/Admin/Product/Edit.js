@@ -1,14 +1,10 @@
 import axios from "axios";
 import React, { Fragment, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import SuccessAlert from "../../../Components/Alerts/SuccessAlert";
 import FormButton from "../../../Components/Form/FormButton";
 import InputField from "../../../Components/Form/InputField";
 import AdminSidebar from "../../../Components/Layouts/AdminSidebar";
 import { API_HOST } from "../../../config/constant";
-import { Editor } from "react-draft-wysiwyg";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-import { EditorState } from "draft-js";
 import { validate } from "../../../Utils/Validator";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -29,9 +25,7 @@ export default function EditProduct() {
   const [errors, setErrors] = useState({});
 
   const [imageURL, setImageURL] = useState("");
-  const [editorState, setEditorState] = useState(
-    EditorState.createEmpty()
-  );
+
 
   function handleImage(e){
 

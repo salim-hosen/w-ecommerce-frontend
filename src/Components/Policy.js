@@ -1,8 +1,8 @@
 export default function(){
 
     return (
-        <section className="max-w-6xl mx-auto px-4 my-5">
-        <h1 className="text-center text-5xl font-bold">Why Shop With Us</h1>
+        <section className="max-w-6xl mx-auto px-4 my-20">
+        <h1 className="text-center text-4xl font-bold">Why Shop With Us</h1>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-5 text-white">
           <div className="text-center p-5 bg-indigo-900 rounded-md">

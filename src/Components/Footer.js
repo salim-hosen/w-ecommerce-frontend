@@ -1,7 +1,7 @@
 
 export default function(){
     return (
-        <footer className="w-full bg-gray-50">
+        <footer className="w-full bg-gray-50 mt-20">
             <div className="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-3 lg:grid-cols-5">
                 <div className="col-span-2 mb-5">
                     <h1 className="text-3xl font-bold text-gray-700">WEcommerce<span className="text-indigo-700 text-4xl">.</span></h1>

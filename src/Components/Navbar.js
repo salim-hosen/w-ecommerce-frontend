@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 function Navbar(props) {
 
-  const {user} = props;
+  const {user,cart} = props;
 
   return (
     <nav className="bg-white sticky top-0 z-50 shadow-sm">
@@ -42,13 +42,13 @@ function Navbar(props) {
 
             {/* Cart */}
             <div className="lg:ml-2">
-              <a href="#" className="group -m-2 p-2 flex items-center">
+              <Link to="/cart" className="group -m-2 p-2 flex items-center">
                 <i className="uil uil-shopping-bag text-lg"></i>
                 <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-                  0
+                  {cart.items.length}
                 </span>
                 <span className="sr-only">items in cart, view bag</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -60,6 +60,7 @@ function Navbar(props) {
 
 const mapStateToProps = (state) => ({
   user: state.user,
+  cart: state.cart
 });
 
 

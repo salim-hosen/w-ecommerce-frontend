@@ -16,12 +16,16 @@ import ForgotPassword from "./Pages/Auth/ForgotPassword";
 import ResetPassword from "./Pages/Auth/ResetPassword";
 import VerifyEmail from "./Pages/Auth/VerifyEmail";
 import ResendVerificationEmail from "./Pages/Auth/ResendVerificationEmail";
-import BuyerOrders from "./Pages/Buyer/Orders";
+import BuyerOrders from "./Pages/Buyer/Order/Index";
 import BuyerSettings from "./Pages/Buyer/Settings";
 import Products from "./Pages/Admin/Product/Index";
 import AdminOrders from "./Pages/Admin/Orders";
 import CreateProduct from "./Pages/Admin/Product/Create";
 import EditProduct from "./Pages/Admin/Product/Edit";
+import Cart from "./Pages/Cart";
+import AllProduct from "./Pages/AllProduct";
+import { loadCartItems } from "./redux/actions/cartActions";
+import { OrderShow } from "./Pages/Buyer/Order/Show";
 
 
 function App() {
@@ -41,9 +45,10 @@ function App() {
         }
         
         store.dispatch(getUser());
+ 
        
       } 
-
+      store.dispatch(loadCartItems());
 
   }, [])
 
@@ -55,6 +60,8 @@ function App() {
               <Routes>
                 <Route exact path="/" element={<Index />} />
                 <Route exact path="/product/:slug" element={<ProductDetails />} />
+                <Route exact path="/cart" element={<Cart />} />
+                <Route exact path="/products" element={<AllProduct />} />
                 
                 <Route exact path="/sign-in" element={<Signin />} />
                 <Route exact path="/sign-up" element={<Signup />} />
@@ -66,6 +73,8 @@ function App() {
 
                 <Route exact path="/buyer/dashboard" element={<BuyerDashboard />} />
                 <Route exact path="/buyer/orders" element={<BuyerOrders />} />
+                <Route exact path="/buyer/orders/:id" element={<OrderShow />} />
+                <Route exact path="/buyer/orders/edit/:id" element={<BuyerOrders />} />
                 <Route exact path="/buyer/settings" element={<BuyerSettings />} />
 
 

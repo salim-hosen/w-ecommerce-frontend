@@ -14,7 +14,7 @@ export default function Index(){
             <Slider></Slider>
             <Policy></Policy>
             <OurProducts></OurProducts>
-            <Newsletter></Newsletter>
+            {/* <Newsletter></Newsletter> */}
             <Footer></Footer>
         </div>
     );

@@ -118,6 +118,7 @@ function handleSubmit(e){
 
                 <div className="mt-6">
                   <FormButton
+                  fullWidth={true}
                       buttonText="Create Account"
                       loading={submitting}
                     />

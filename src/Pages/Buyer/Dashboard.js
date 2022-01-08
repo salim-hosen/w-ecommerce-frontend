@@ -11,13 +11,13 @@ export default function Dashboard() {
       <Navbar></Navbar>
 
       <div className="max-w-6xl mx-auto px-4">
-        <div className="flex flex-row flex-wrap py-10">
+        <div class="flex flex-row flex-wrap py-10">
           
           <BuyerSidebar></BuyerSidebar>
 
-          <main role="main" className="w-full sm:w-2/3 md:w-3/4 pt-1 px-2">
+          <main role="main" class="w-full sm:w-2/3 md:w-3/4 pt-1 px-2">
             <div className="w-full h-full rounded border-dashed border-2 border-gray-300">
-              Dashboard
+              Place your content here
             </div>
           </main>
 

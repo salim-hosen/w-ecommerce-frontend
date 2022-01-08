@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
+
 export default function(props){
 
-    const { id, image, title, rating, price } = props.product;
+    const { id, image, title, rating, price, slug } = props.product;
 
     return (
         <div className="max-w-sm bg-white rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-            <a href="#">
+            <Link to={`/product/${slug}`}>
                 <img className="p-8 rounded-t-lg h-56 mx-auto" src={image} alt="product image" />
-            </a>
+            </Link>
             <div className="px-5 pb-5">
                 <a href="#">
                     <h3 className="text-sm font-semibold tracking-tight text-gray-900">{ title }</h3>
@@ -22,9 +24,9 @@ export default function(props){
                 <div className="flex justify-between items-center mt-3">
                     <span className="text-2xl font-bold text-gray-900">${price}</span>
                     {/* <a href="#" className="text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a> */}
-                    <a href="#" className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">
+                    <Link to="#" className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">
                         <i className="text-xl uil uil-shopping-cart-alt"></i>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>

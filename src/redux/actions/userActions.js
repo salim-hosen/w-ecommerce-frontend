@@ -23,24 +23,22 @@ export const makeAuthenticated = (response, navigate) => (dispatch) => {
 } 
 
 
-export const logoutUser = () => (dispatch) => {
+export const logoutUser = (navigate) => (dispatch) => {
 
-    alert("HERE");
+
     const token = localStorage.token;
+
+    if(token){
+        // logout from server
+        axios.post(API_HOST+"/logout", {}, { headers: {"Authorization" : `${localStorage.getItem('token')}`} });
+    }
 
     localStorage.removeItem("token");
     localStorage.removeItem('expires_at');
     delete axios.defaults.headers.common["Authorization"];
     dispatch({type: SET_UNAUTHENTICATED});
 
-    if(token){
-        // logout from server
-        axios.post(API_HOST+"/logout", null, {
-            headers: {
-                Authorization: "Bearer "+ token
-            }
-        });
-    }
+    navigate("/");
 
 }
 

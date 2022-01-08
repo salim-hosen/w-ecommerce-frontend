@@ -57,7 +57,7 @@ function BuyerSidebar(props) {
                     <li className="flex w-full justify-between text-gray-700 hover:text-gray-800 cursor-pointer items-center">
                       <Link
                         to="#"
-                        onClick={() => props.logoutUser()}
+                        onClick={() => props.logoutUser(navigate)}
                         className="block w-full py-2"
                       >
                         <div className="flex items-center">

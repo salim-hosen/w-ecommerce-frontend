@@ -118,6 +118,7 @@ function Signin(props) {
                 </div>
                 <div className="mt-6">
                   <FormButton
+                    fullWidth={true}
                     buttonText="Sign In"
                     loading={submitting}
                   />

@@ -1,12 +1,9 @@
 import axios from "axios";
 import React, { Fragment, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import SuccessAlert from "../../../Components/Alerts/SuccessAlert";
 import FormButton from "../../../Components/Form/FormButton";
 import InputField from "../../../Components/Form/InputField";
 import AdminSidebar from "../../../Components/Layouts/AdminSidebar";
 import { API_HOST } from "../../../config/constant";
-import { EditorState } from "draft-js";
 import { validate } from "../../../Utils/Validator";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
