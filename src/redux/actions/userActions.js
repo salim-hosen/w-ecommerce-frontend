@@ -46,10 +46,9 @@ export const getUser = () => (dispatch) => {
     
     const token = localStorage.token;
 
-    axios.get(API_HOST+"/me", { headers: {"Authorization" : `${token}`} })
+    return axios.get(API_HOST+"/me", { headers: {"Authorization" : `${token}`} })
     .then(res => {
         dispatch({type: SET_AUTHENTICATED, payload: res.data.data});
-
     })
     .catch( err => {
         // dispatch(logoutUser());

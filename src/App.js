@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store";
@@ -26,9 +26,13 @@ import Cart from "./Pages/Cart";
 import AllProduct from "./Pages/AllProduct";
 import { loadCartItems } from "./redux/actions/cartActions";
 import { OrderShow } from "./Pages/Buyer/Order/Show";
+import BuyerRoute from "./routes/BuyerRoute";
+import GuestRoute from "./routes/GuestRoute";
 
 
 function App() {
+
+  const [loading, setLoading] = useState(true);
 
   React.useEffect(() => {
 
@@ -45,14 +49,16 @@ function App() {
         }
         
         store.dispatch(getUser());
- 
+        
        
       } 
       store.dispatch(loadCartItems());
-
+      setLoading(false);
   }, [])
 
   return (
+    loading ? <p>Loading...</p>
+    :
     <div className="App">
       <Provider store={store}>
         <Router>
@@ -63,20 +69,23 @@ function App() {
                 <Route exact path="/cart" element={<Cart />} />
                 <Route exact path="/products" element={<AllProduct />} />
                 
-                <Route exact path="/sign-in" element={<Signin />} />
-                <Route exact path="/sign-up" element={<Signup />} />
-                <Route exact path="/admin" element={<Signin />} />
-                <Route exact path="/forgot-password" element={<ForgotPassword />} />
-                <Route exact path="/password/reset/:token" element={<ResetPassword />} />
-                <Route exact path="/verification/verify/:user" element={<VerifyEmail />} />
-                <Route exact path="/resend-verification" element={<ResendVerificationEmail />} />
+                <Route element={<GuestRoute/>}>
+                  <Route exact path="/sign-in" element={<Signin />} />
+                  <Route exact path="/sign-up" element={<Signup />} />
+                  <Route exact path="/admin" element={<Signin />} />
+                  <Route exact path="/forgot-password" element={<ForgotPassword />} />
+                  <Route exact path="/password/reset/:token" element={<ResetPassword />} />
+                  <Route exact path="/verification/verify/:user" element={<VerifyEmail />} />
+                  <Route exact path="/resend-verification" element={<ResendVerificationEmail />} />
+                </Route>
 
-                <Route exact path="/buyer/dashboard" element={<BuyerDashboard />} />
-                <Route exact path="/buyer/orders" element={<BuyerOrders />} />
-                <Route exact path="/buyer/orders/:id" element={<OrderShow />} />
-                <Route exact path="/buyer/orders/edit/:id" element={<BuyerOrders />} />
-                <Route exact path="/buyer/settings" element={<BuyerSettings />} />
-
+                <Route element={<BuyerRoute/>}>
+                  <Route exact path="/buyer/dashboard" element={<BuyerDashboard />} />
+                  <Route exact path="/buyer/orders" element={<BuyerOrders />} />
+                  <Route exact path="/buyer/orders/:id" element={<OrderShow />} />
+                  <Route exact path="/buyer/orders/edit/:id" element={<BuyerOrders />} />
+                  <Route exact path="/buyer/settings" element={<BuyerSettings />} />
+                </Route>
 
                 <Route exact path="/admin/dashboard" element={<AdminDashboard />} />
                 <Route exact path="/admin/products" element={<Products />} />

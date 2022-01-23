@@ -1,18 +1,16 @@
 import React from 'react';
-import {Navigate } from 'react-router-dom';
+import {Navigate, Outlet } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const BuyerRoute = ({ children, user}) => {
 
-    if(user.authenticated && user.role == "buyer"){
+    if(!user.authenticated){
 
-        return children
+        return <Navigate to="/sign-in" replace/>;
 
-    }else{
-        
-        return <Navigate to="" replace/>
-    
     }
+
+    return <Outlet/>
 
 };
 
